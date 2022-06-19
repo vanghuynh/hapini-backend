@@ -1,0 +1,10 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+	<changeSet author="huynhvang (generated)" id="insert-oauth-client">
+	   <sql>INSERT INTO "oauth_client_details"("id","access_token_validity","additional_information","authorities","authorized_grant_types","autoapprove","client_id","client_secret","refresh_token_validity","resource_ids","scope","web_server_redirect_uri")
+			VALUES
+			(1,86400,NULL,NULL,E'password,authorization_code,refresh_token',E'true',E'fooClientIdPassword',E'secret',432000,NULL,E'foo,read,write',NULL);
+	   </sql>
+	</changeSet>
+	
+</databaseChangeLog>

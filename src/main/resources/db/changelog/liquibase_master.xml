@@ -1,0 +1,373 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet author="huynhvang (generated)" id="1569116523450-1">
+        <createTable tableName="address">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="address_pkey"/>
+            </column>
+            <column name="city" type="VARCHAR(255)"/>
+            <column name="district" type="VARCHAR(255)"/>
+            <column name="house" type="BYTEA"/>
+            <column name="latitude" type="FLOAT8"/>
+            <column name="longitude" type="FLOAT8"/>
+            <column name="province" type="VARCHAR(255)"/>
+            <column name="street_name_en" type="VARCHAR(255)"/>
+            <column name="street_name_vi" type="VARCHAR(255)"/>
+            <column name="street_number" type="VARCHAR(255)"/>
+            <column name="ward" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-2">
+        <createTable tableName="address_setting">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="address_setting_pkey"/>
+            </column>
+            <column name="city_code" type="VARCHAR(255)"/>
+            <column name="code" type="VARCHAR(255)"/>
+            <column name="description_en" type="VARCHAR(255)"/>
+            <column name="description_vi" type="VARCHAR(255)"/>
+            <column name="district_code" type="VARCHAR(255)"/>
+            <column name="name_en" type="VARCHAR(255)"/>
+            <column name="name_vi" type="VARCHAR(255)"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="ward_code" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-3">
+        <createTable tableName="apartment">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="apartment_pkey"/>
+            </column>
+            <column name="area" type="BIGINT"/>
+            <column name="available" type="BOOLEAN"/>
+            <column name="bath" type="BIGINT"/>
+            <column name="bed" type="BIGINT"/>
+            <column name="description_en" type="VARCHAR(2000)"/>
+            <column name="description_vi" type="VARCHAR(2000)"/>
+            <column name="floor" type="BIGINT"/>
+            <column name="furniture" type="BOOLEAN"/>
+            <column name="last_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="level" type="BIGINT"/>
+            <column name="max_number" type="BIGINT"/>
+            <column name="name_en" type="VARCHAR(255)"/>
+            <column name="name_vi" type="VARCHAR(255)"/>
+            <column name="note_en" type="VARCHAR(2000)"/>
+            <column name="note_vi" type="VARCHAR(2000)"/>
+            <column name="price" type="BIGINT"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="tags" type="VARCHAR(2000)"/>
+            <column name="address_id" type="BIGINT"/>
+            <column name="building_id" type="BIGINT"/>
+            <column name="contact_id" type="BIGINT"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-4">
+        <createTable tableName="balance">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="balance_pkey"/>
+            </column>
+            <column name="amount" type="FLOAT8"/>
+            <column name="last_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-5">
+        <createTable tableName="building">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="building_pkey"/>
+            </column>
+            <column name="description_en" type="VARCHAR(2000)"/>
+            <column name="description_vi" type="VARCHAR(2000)"/>
+            <column name="last_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="name_en" type="VARCHAR(255)"/>
+            <column name="name_vi" type="VARCHAR(255)"/>
+            <column name="note_en" type="VARCHAR(2000)"/>
+            <column name="note_vi" type="VARCHAR(2000)"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="address_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-6">
+        <createTable tableName="comment">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="comment_pkey"/>
+            </column>
+            <column name="comment" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="rating" type="INTEGER"/>
+            <column name="title" type="VARCHAR(255)"/>
+            <column name="house_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-7">
+        <createTable tableName="contact">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="contact_pkey"/>
+            </column>
+            <column name="avatar" type="VARCHAR(2000)"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="phone" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-8">
+        <createTable tableName="facility">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="facility_pkey"/>
+            </column>
+            <column name="electricity" type="VARCHAR(255)"/>
+            <column name="note_en" type="VARCHAR(2000)"/>
+            <column name="note_vi" type="VARCHAR(2000)"/>
+            <column name="water" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-9">
+        <createTable tableName="history">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="history_pkey"/>
+            </column>
+            <column name="action" type="VARCHAR(255)"/>
+            <column name="last_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="note" type="VARCHAR(2000)"/>
+            <column name="person" type="VARCHAR(255)"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-10">
+        <createTable tableName="house">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="house_pkey"/>
+            </column>
+            <column name="avatar" type="VARCHAR(2000)"/>
+            <column name="description_en" type="VARCHAR(2000)"/>
+            <column name="description_vi" type="VARCHAR(2000)"/>
+            <column name="last_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="name_en" type="VARCHAR(255)"/>
+            <column name="name_vi" type="VARCHAR(255)"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="address_id" type="BIGINT"/>
+            <column name="contact_id" type="BIGINT"/>
+            <column name="facility_id" type="BIGINT"/>
+            <column name="policy_id" type="BIGINT"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-11">
+        <createTable tableName="image">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="image_pkey"/>
+            </column>
+            <column name="public_id" type="VARCHAR(255)"/>
+            <column name="secure_url" type="VARCHAR(255)"/>
+            <column name="url" type="VARCHAR(255)"/>
+            <column name="apartment_id" type="BIGINT"/>
+            <column name="building_id" type="BIGINT"/>
+            <column name="house_id" type="BIGINT"/>
+            <column name="paper_id" type="BIGINT"/>
+            <column name="room_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-12">
+        <createTable tableName="oauth_access_token">
+            <column autoIncrement="true" name="id" type="SERIAL">
+                <constraints primaryKey="true" primaryKeyName="oauth_access_token_pkey"/>
+            </column>
+            <column name="authentication" type="BYTEA"/>
+            <column name="authentication_id" type="VARCHAR(255)"/>
+            <column name="client_id" type="VARCHAR(255)"/>
+            <column name="refresh_token" type="VARCHAR(255)"/>
+            <column name="token" type="BYTEA"/>
+            <column name="token_id" type="VARCHAR(255)"/>
+            <column name="user_name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-13">
+        <createTable tableName="oauth_approvals">
+            <column autoIncrement="true" name="id" type="SERIAL">
+                <constraints primaryKey="true" primaryKeyName="oauth_approvals_pkey"/>
+            </column>
+            <column name="client_id" type="VARCHAR(255)"/>
+            <column name="expires_at" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="last_modified_at" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="scope" type="VARCHAR(255)"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="user_id" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-14">
+        <createTable tableName="oauth_client_details">
+            <column autoIncrement="true" name="id" type="SERIAL">
+                <constraints primaryKey="true" primaryKeyName="oauth_client_details_pkey"/>
+            </column>
+            <column name="access_token_validity" type="INTEGER"/>
+            <column name="additional_information" type="VARCHAR(255)"/>
+            <column name="authorities" type="VARCHAR(255)"/>
+            <column name="authorized_grant_types" type="VARCHAR(255)"/>
+            <column name="autoapprove" type="VARCHAR(255)"/>
+            <column name="client_id" type="VARCHAR(255)"/>
+            <column name="client_secret" type="VARCHAR(255)"/>
+            <column name="refresh_token_validity" type="INTEGER"/>
+            <column name="resource_ids" type="VARCHAR(255)"/>
+            <column name="scope" type="VARCHAR(255)"/>
+            <column name="web_server_redirect_uri" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-15">
+        <createTable tableName="oauth_client_token">
+            <column autoIncrement="true" name="id" type="SERIAL">
+                <constraints primaryKey="true" primaryKeyName="oauth_client_token_pkey"/>
+            </column>
+            <column name="authentication_id" type="VARCHAR(255)"/>
+            <column name="client_id" type="VARCHAR(255)"/>
+            <column name="token" type="BYTEA"/>
+            <column name="token_id" type="VARCHAR(255)"/>
+            <column name="user_name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-16">
+        <createTable tableName="oauth_code">
+            <column autoIncrement="true" name="id" type="SERIAL">
+                <constraints primaryKey="true" primaryKeyName="oauth_code_pkey"/>
+            </column>
+            <column name="authentication" type="TEXT"/>
+            <column name="code" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-17">
+        <createTable tableName="oauth_refresh_token">
+            <column autoIncrement="true" name="id" type="SERIAL">
+                <constraints primaryKey="true" primaryKeyName="oauth_refresh_token_pkey"/>
+            </column>
+            <column name="authentication" type="BYTEA"/>
+            <column name="token" type="BYTEA"/>
+            <column name="token_id" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-18">
+        <createTable tableName="paper">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="paper_pkey"/>
+            </column>
+            <column name="available" type="BOOLEAN"/>
+            <column name="avatar" type="VARCHAR(2000)"/>
+            <column name="content" type="TEXT"/>
+            <column name="description" type="TEXT"/>
+            <column name="last_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="tags" type="VARCHAR(2000)"/>
+            <column name="title" type="TEXT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-19">
+        <createTable tableName="policy">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="policy_pkey"/>
+            </column>
+            <column name="cook_meal" type="BOOLEAN"/>
+            <column name="flex_time" type="BOOLEAN"/>
+            <column name="packing" type="BOOLEAN"/>
+            <column name="wifi" type="BOOLEAN"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-20">
+        <createTable tableName="room">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="room_pkey"/>
+            </column>
+            <column name="area" type="BIGINT"/>
+            <column name="available" type="BOOLEAN"/>
+            <column name="avatar" type="VARCHAR(2000)"/>
+            <column name="description_en" type="VARCHAR(2000)"/>
+            <column name="description_vi" type="VARCHAR(2000)"/>
+            <column name="last_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="level" type="BIGINT"/>
+            <column name="max_number" type="BIGINT"/>
+            <column name="name_en" type="VARCHAR(255)"/>
+            <column name="name_vi" type="VARCHAR(255)"/>
+            <column name="note_en" type="VARCHAR(2000)"/>
+            <column name="note_vi" type="VARCHAR(2000)"/>
+            <column name="price" type="BIGINT"/>
+            <column name="sex" type="VARCHAR(255)"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="toilet" type="VARCHAR(255)"/>
+            <column name="house_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-21">
+        <createTable tableName="user_details">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="user_details_pkey"/>
+            </column>
+            <column name="active_code" type="VARCHAR(255)"/>
+            <column name="authority" type="VARCHAR(255)"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="is_enabled" type="BOOLEAN"/>
+            <column name="last_update" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="note" type="VARCHAR(2000)"/>
+            <column name="password" type="VARCHAR(255)"/>
+            <column name="phone" type="VARCHAR(255)"/>
+            <column name="reset_code" type="VARCHAR(255)"/>
+            <column name="type" type="BIGINT"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="balance_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-22">
+        <addForeignKeyConstraint baseColumnNames="facility_id" baseTableName="house" constraintName="fk2qnfhuc3ppjidp8pphkuyv8b8" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="facility" validate="true"/>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-23">
+        <addForeignKeyConstraint baseColumnNames="address_id" baseTableName="house" constraintName="fk32xohmpnfc6y7gkf5ayrr5hbm" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="address" validate="true"/>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-24">
+        <addForeignKeyConstraint baseColumnNames="paper_id" baseTableName="image" constraintName="fk41egdmroll3ibn7nrcbh3qk6c" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="paper" validate="true"/>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-25">
+        <addForeignKeyConstraint baseColumnNames="contact_id" baseTableName="apartment" constraintName="fk4swcygr1iw97xaewbod7veuu1" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="contact" validate="true"/>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-26">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="apartment" constraintName="fk8k2xjvjjeisnrqet4k3cbq1k5" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="user_details" validate="true"/>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-27">
+        <addForeignKeyConstraint baseColumnNames="balance_id" baseTableName="user_details" constraintName="fkbubdyapyet2kcjk69b05cwm1c" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="balance" validate="true"/>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-28">
+        <addForeignKeyConstraint baseColumnNames="address_id" baseTableName="apartment" constraintName="fkewm9sknyj3o4ss02td055orh0" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="address" validate="true"/>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-29">
+        <addForeignKeyConstraint baseColumnNames="address_id" baseTableName="building" constraintName="fkf3ryyh4bd143l5b8stt65hwgr" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="address" validate="true"/>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-30">
+        <addForeignKeyConstraint baseColumnNames="room_id" baseTableName="image" constraintName="fkgfoef2g9bwlndgk8ttmf902dg" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="room" validate="true"/>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-31">
+        <addForeignKeyConstraint baseColumnNames="house_id" baseTableName="image" constraintName="fkgfwbx7t4780faid7r1a8nf72l" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="house" validate="true"/>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-32">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="house" constraintName="fkgudo0ovxmgb68e19qrdb7phyi" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="user_details" validate="true"/>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-33">
+        <addForeignKeyConstraint baseColumnNames="building_id" baseTableName="image" constraintName="fkmbokv25uiypnerv5frvxnuvmh" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="building" validate="true"/>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-34">
+        <addForeignKeyConstraint baseColumnNames="house_id" baseTableName="room" constraintName="fkmbwc7b9ddb7r414y87yeskgl1" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="house" validate="true"/>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-35">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="history" constraintName="fkmg72r907egvrmlfror8c80p13" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="user_details" validate="true"/>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-36">
+        <addForeignKeyConstraint baseColumnNames="building_id" baseTableName="apartment" constraintName="fkmjjff7q9e4qfyop2w1vafy619" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="building" validate="true"/>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-37">
+        <addForeignKeyConstraint baseColumnNames="apartment_id" baseTableName="image" constraintName="fkmlbjr42kwmxfi7oqk7qmdakvv" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="apartment" validate="true"/>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-38">
+        <addForeignKeyConstraint baseColumnNames="contact_id" baseTableName="house" constraintName="fkreom567coptn95ximwwgesycl" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="contact" validate="true"/>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-39">
+        <addForeignKeyConstraint baseColumnNames="policy_id" baseTableName="house" constraintName="fksmwvyoenk4007ri7pi885ivqj" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="policy" validate="true"/>
+    </changeSet>
+    <changeSet author="huynhvang (generated)" id="1569116523450-40">
+        <addForeignKeyConstraint baseColumnNames="house_id" baseTableName="comment" constraintName="fktn5079oomulwl8fn3yb9vuhlk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="house" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
